@@ -1,0 +1,93 @@
+version: "3.8"
+services:
+  proxy:
+    image: traefik:v2.9
+    command:
+      # - "--log.level=DEBUG"
+      - "--api=true"
+      - "--api.dashboard=true"
+      - "--api.insecure=true" # Don't do that in production
+      - "--providers.docker"
+      - "--entrypoints.web.address=:80"
+      # add pilot token service
+      # - "--pilot.token=3d1bd97f-cb9d-4cde-8112-77ce2f5abc92"
+      # install plugin rewrite body
+      # - "--experimental.plugins.plugin-rewrite.modulename=github.com/traefik/plugin-rewritebody"
+      # - "--experimental.plugins.plugin-rewrite.version=v0.3.1"
+    labels: {}
+      # Create basics middlewares
+      # - "traefik.http.middlewares.my-auth.basicauth.users=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/"
+      # - "traefik.http.middlewares.my-compress.compress=true"
+      # - "traefik.http.middlewares.my-header.headers.customresponseheaders.X-Custom-Response-Header=cinema"
+      # Create middlewares for plugins
+      # - "traefik.http.middlewares.my-rewrite.plugin.plugin-rewrite.lastModified=true"
+      # - "traefik.http.middlewares.my-rewrite.plugin.plugin-rewrite.rewrites[0].regex=ID"
+      # - "traefik.http.middlewares.my-rewrite.plugin.plugin-rewrite.rewrites[0].replacement=MY-ID"
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+        read_only: true
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
+
+  product:
+    build: ./product
+    command:
+      - "-mongoURI"
+      - "mongodb://db:27017/"
+    #   - "-enableCredentials"
+    #   - "true"
+    # environment:
+    #   MONGODB_USERNAME: "demo"
+    #   MONGODB_PASSWORD: "e3LBVTPdlzxYbxt9"
+    labels: 
+    #   # Enable public access
+      - "traefik.http.routers.product.rule=PathPrefix(`/api/product/`)"
+      - "traefik.http.services.product.loadbalancer.server.port=4000"
+
+  db:
+    image: mongo:4.2.11
+    ports:
+      - target: 27017
+        published: 27017
+        protocol: tcp
+        mode: host
+    volumes:
+      - type: bind
+        source: ./database
+        target: /database
+
+  auth:
+    container_name: product-catalog-auth-services
+    build: ./auth
+    depends_on:
+      - pgsql_auth
+    labels: 
+      # Enable public access
+      - "traefik.http.routers.auth.rule=PathPrefix(`/api/auth/`)"
+      - "traefik.http.services.auth.loadbalancer.server.port=4000"
+
+  pgsql_auth:
+    container_name: product-catalog-auth-pgsql
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: root
+      POSTGRES_DB: auth
+      PGDATA: /auth/data 
+  
+  adminer_auth:
+    container_name: product-catalog-auth-adminer
+    image: adminer
+    depends_on:
+      - pgsql_auth
+    ports:
+      - 8091:8080
