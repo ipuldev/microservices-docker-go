@@ -7,6 +7,7 @@ import (
 	"runtime/debug"
 
 	"github.com/briankliwon/microservices-product-catalog/auth/pkg/db/pgsql"
+	"github.com/briankliwon/microservices-product-catalog/auth/pkg/models"
 	"github.com/go-oauth2/oauth2/v4/server"
 )
 
@@ -15,6 +16,7 @@ type application struct {
 	infoLog  *log.Logger
 	srv      *server.Server
 	auth     *pgsql.AuthModel
+	oauth2   *models.Oauth2Key
 }
 
 func (app *application) serverError(w http.ResponseWriter, err error) {

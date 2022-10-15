@@ -9,5 +9,11 @@ type Auth struct {
 }
 
 type HttpResponse struct {
-	Message string `json:"message"`
+	Message   string    `json:"message"`
+	OauthData Oauth2Key `json:"oauth_data"`
+}
+
+type Oauth2Key struct {
+	ClientID     string `json:"client_id"`
+	ClientSecret string `json:"client_secret"`
 }

@@ -33,7 +33,6 @@ Detail Structure Project :
 * Auth Service
   * Database:
     * [![Postgresql][Postgresql.com]][Postgresql-url]
-    * [![Redis][Redis.com]][Redis-url]
   * Routing:
     * /login
     * /signup
@@ -59,7 +58,6 @@ Detail Structure Project :
 * [![Docker][Docker.com]][Docker-url]
 * [![Mongodb][Mongodb.com]][Mongodb-url]
 * [![Postgresql][Postgresql.com]][Postgresql-url]
-* [![Redis][Redis.com]][Redis-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

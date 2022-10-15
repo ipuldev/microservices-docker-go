@@ -39,27 +39,23 @@ services:
         mode: host
 
   product:
+    container_name: product-catalog-product-services
     build: ./product
     command:
       - "-mongoURI"
       - "mongodb://db:27017/"
-    #   - "-enableCredentials"
-    #   - "true"
-    # environment:
-    #   MONGODB_USERNAME: "demo"
-    #   MONGODB_PASSWORD: "e3LBVTPdlzxYbxt9"
     labels: 
-    #   # Enable public access
       - "traefik.http.routers.product.rule=PathPrefix(`/api/product/`)"
       - "traefik.http.services.product.loadbalancer.server.port=4000"
 
-  db:
+  mongodb_product:
+    container_name: product-catalog-product-mongodb
     image: mongo:4.2.11
-    ports:
-      - target: 27017
-        published: 27017
-        protocol: tcp
-        mode: host
+    # ports:
+      # - target: 27017
+      #   published: 27017
+      #   protocol: tcp
+      #   mode: host
     volumes:
       - type: bind
         source: ./database
@@ -71,7 +67,6 @@ services:
     depends_on:
       - pgsql_auth
     labels: 
-      # Enable public access
       - "traefik.http.routers.auth.rule=PathPrefix(`/api/auth/`)"
       - "traefik.http.services.auth.loadbalancer.server.port=4000"
 

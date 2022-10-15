@@ -9,10 +9,22 @@ import (
 )
 
 func (app *application) authorize(w http.ResponseWriter, r *http.Request) {
-	err := app.srv.HandleAuthorizeRequest(w, r)
+	_, err := app.srv.ValidationBearerToken(r)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
 	}
+
+	httpResponse := &models.HttpResponse{
+		Message: "Authentiicated",
+	}
+	b, err := json.Marshal(httpResponse)
+	if err != nil {
+		app.serverError(w, err)
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(b)
 }
 
 func (app *application) token(w http.ResponseWriter, r *http.Request) {
@@ -38,6 +50,10 @@ func (app *application) signup(w http.ResponseWriter, r *http.Request) {
 
 	httpResponse := &models.HttpResponse{
 		Message: "New user have been created",
+		OauthData: models.Oauth2Key{
+			ClientID:     app.oauth2.ClientID,
+			ClientSecret: app.oauth2.ClientSecret,
+		},
 	}
 	b, err := json.Marshal(httpResponse)
 	if err != nil {
@@ -62,9 +78,15 @@ func (app *application) login(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.serverError(w, err)
 	}
+
 	httpResponse := &models.HttpResponse{
 		Message: "Login success",
+		OauthData: models.Oauth2Key{
+			ClientID:     app.oauth2.ClientID,
+			ClientSecret: app.oauth2.ClientSecret,
+		},
 	}
+	app.srv.HandleTokenRequest(w, r)
 	b, err := json.Marshal(httpResponse)
 	if err != nil {
 		app.serverError(w, err)
