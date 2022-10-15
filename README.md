@@ -29,8 +29,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Microservices docker is an example how micraservices is actually work in a simple environment, managing traefik and authentication is basic implementation on this project.It's Written in Go but flexible to add another services using another language. 
 
 Detail Structure Project :
@@ -141,7 +139,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-url]: https://www.linkedin.com/in/muhammad-saiful-abdulah-079545186/
 [Design-url]:https://www.figma.com/file/JrLuk8F8CwUI7QUBTkSh3G/Microservices-Docker?node-id=0%3A1
 [product-screenshot]: images/screenshot.png
-[GO.com]:https://img.shields.io/badge/GO 1.19-0769AD?style=for-the-badge&logo=go&logoColor=white
+[GO.com]:https://img.shields.io/badge/GO%1.19-0769AD?style=for-the-badge&logo=go&logoColor=white
 [GO-Url]:https://go.dev/
 [Docker.com]:https://img.shields.io/badge/docker-003f8c?style=for-the-badge&logo=docker&logoColor=white
 [Docker-Url]:https://www.docker.com/
