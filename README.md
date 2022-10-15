@@ -27,7 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Microservices docker is an example how micraservices is actually work in a simple environment, managing traefik and authentication is basic implementation on this project.It's Written in Go but flexible to add another services using another language. 
+Microservices docker is an example how micraservices is actually work in a simple environment, managing traefik and authentication is basic implementation on this project.It's written by Go flexible to add another services using another language. 
 
 Detail Structure Project :
 * Auth Service
@@ -126,19 +126,19 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[license-shield]: https://img.shields.io/github/license/briankliwon/microservices-docker
+[license-url]: https://github.com/briankliwon/microservices-docker/blob/master/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/muhammad-saiful-abdulah-079545186/
 [Design-url]:https://www.figma.com/file/JrLuk8F8CwUI7QUBTkSh3G/Microservices-Docker?node-id=0%3A1
 [product-screenshot]: images/screenshot.png
-[GO.com]:https://img.shields.io/badge/GO%201.19-0769AD?style=for-the-badge&logo=go&logoColor=white
+[GO.com]:https://img.shields.io/badge/GO%201.19-0769AD?style=flat&logo=go&logoColor=white
 [GO-Url]:https://go.dev/
-[Docker.com]:https://img.shields.io/badge/docker-003f8c?style=for-the-badge&logo=docker&logoColor=white
+[Docker.com]:https://img.shields.io/badge/docker-003f8c?style=flat&logo=docker&logoColor=white
 [Docker-Url]:https://www.docker.com/
-[Mongodb.com]:https://img.shields.io/badge/mongodb-116149?style=for-the-badge&logo=mongodb&logoColor=white
+[Mongodb.com]:https://img.shields.io/badge/mongodb-116149?style=flat&logo=mongodb&logoColor=white
 [Mongodb-Url]:https://www.mongodb.com/
-[Postgresql.com]:https://img.shields.io/badge/postgresql-32658f?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgresql.com]:https://img.shields.io/badge/postgresql-32658f?style=flat&logo=postgresql&logoColor=white
 [Postgresql-Url]:https://www.postgresql.org/
-[Redis.com]:https://img.shields.io/badge/redis-d82c20?style=for-the-badge&logo=redis&logoColor=white
+[Redis.com]:https://img.shields.io/badge/redis-d82c20?style=flat&logo=redis&logoColor=white
 [Redis-Url]:https://redis.io/
