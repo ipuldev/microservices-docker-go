@@ -3,33 +3,6 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Simple Microservices</h3>
-
-  <p align="center">
-    Microservice is an simple project to implement how microservies is actually work in simple case and environment
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</div>
-
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -41,17 +14,13 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
+      <li><a href="#prerequisites">Prerequisites</a></li>
+      <li><a href="#installation">Installation</a></li>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -67,8 +36,8 @@ Microservices docker is an example how micraservices is actually work in a simpl
 Detail Structure Project :
 * Auth Service
   * Database:
-    * [![Postgresql][Postgresql.com]][Postgresql-url]
-    * [![Redis][Redis.com]][Redis-url]
+    [![Postgresql][Postgresql.com]][Postgresql-url]
+    [![Redis][Redis.com]][Redis-url]
   * Routing:
     * /login
     * /signup
@@ -76,7 +45,7 @@ Detail Structure Project :
     * /token
 * Product Service
   * Database:
-    * [![Mongodb][Mongodb.com]][Mongodb-url]
+    [![Mongodb][Mongodb.com]][Mongodb-url]
   * Routing:
     * /insert
     * /detail
@@ -164,19 +133,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@briankliwon](https://twitter.com/briankliwon) - muhammad.saiful.engineer@gmail.com
-
-Project Link: [https://github.com/briankliwon/microservices-docker](https://github.com/briankliwon/microservices-docker)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
@@ -185,7 +141,7 @@ Project Link: [https://github.com/briankliwon/microservices-docker](https://gith
 [linkedin-url]: https://www.linkedin.com/in/muhammad-saiful-abdulah-079545186/
 [Design-url]:https://www.figma.com/file/JrLuk8F8CwUI7QUBTkSh3G/Microservices-Docker?node-id=0%3A1
 [product-screenshot]: images/screenshot.png
-[GO.com]:https://img.shields.io/badge/1.19-0769AD?style=for-the-badge&logo=go&logoColor=white
+[GO.com]:https://img.shields.io/badge/GO 1.19-0769AD?style=for-the-badge&logo=go&logoColor=white
 [GO-Url]:https://go.dev/
 [Docker.com]:https://img.shields.io/badge/docker-003f8c?style=for-the-badge&logo=docker&logoColor=white
 [Docker-Url]:https://www.docker.com/
