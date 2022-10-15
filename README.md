@@ -67,17 +67,12 @@ Detail Structure Project :
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 * Docker Engine 20.10.18
 * Docker Compose version 2.11.2
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
 1. ```docker compose up -d```
-
+Note make sure your docker version is competible
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
