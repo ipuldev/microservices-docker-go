@@ -34,8 +34,8 @@ Microservices docker is an example how micraservices is actually work in a simpl
 Detail Structure Project :
 * Auth Service
   * Database:
-    [![Postgresql][Postgresql.com]][Postgresql-url]
-    [![Redis][Redis.com]][Redis-url]
+    * [![Postgresql][Postgresql.com]][Postgresql-url]
+    * [![Redis][Redis.com]][Redis-url]
   * Routing:
     * /login
     * /signup
@@ -43,7 +43,7 @@ Detail Structure Project :
     * /token
 * Product Service
   * Database:
-    [![Mongodb][Mongodb.com]][Mongodb-url]
+    * [![Mongodb][Mongodb.com]][Mongodb-url]
   * Routing:
     * /insert
     * /detail
