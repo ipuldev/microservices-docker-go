@@ -70,6 +70,7 @@ Detail Structure Project :
 
 ### Installation
 1. ```docker compose up -d```
+<br />
 Note make sure your docker version is competible
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
