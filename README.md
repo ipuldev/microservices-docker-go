@@ -62,16 +62,27 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Microservices docker is an example how micraservices is actually work in a simple environment, managing traefik and authentication is basic implementation on this project.It's Written in Go but flexible to add another services using another language. 
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+Detail Structure Project :
+* Auth Service
+  * Database:
+    * [![Postgresql][Postgresql.com]][Postgresql-url]
+    * [![Redis][Redis.com]][Redis-url]
+  * Routing:
+    * /login
+    * /signup
+    * /authorise
+    * /token
+* Product Service
+  * Database:
+    * [![Mongodb][Mongodb.com]][Mongodb-url]
+  * Routing:
+    * /insert
+    * /detail
+    * /update
+    * /delete
+    * /
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,52 +90,26 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+* [![Go][Go.com]][Go-url]
+* [![Docker][Docker.com]][Docker-url]
+* [![Mongodb][Mongodb.com]][Mongodb-url]
+* [![Postgresql][Postgresql.com]][Postgresql-url]
+* [![Redis][Redis.com]][Redis-url]
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* Docker Engine 20.10.18
+* Docker Compose version 2.11.2
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. ```docker compose up -d```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,9 +118,9 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+For more information 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_Postman [Documentation](https://www.postman.com/belivine/workspace/microservices-docker)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,15 +129,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+- [x] Auth Service
+- [x] Product Service
+- [ ] Environment
+    - [ ] Routing
+    - [ ] Docker
+    - [ ] API Gateway
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,7 +157,6 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- LICENSE -->
 ## License
 
@@ -188,9 +169,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/briankliwon) - muhammad.saiful.engineer@gmail.com
+Your Name - [@briankliwon](https://twitter.com/briankliwon) - muhammad.saiful.engineer@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/briankliwon/microservices-docker](https://github.com/briankliwon/microservices-docker)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -202,20 +183,15 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/muhammad-saiful-abdulah-079545186/
+[Design-url]:https://www.figma.com/file/JrLuk8F8CwUI7QUBTkSh3G/Microservices-Docker?node-id=0%3A1
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[GO.com]:https://img.shields.io/badge/1.19-0769AD?style=for-the-badge&logo=go&logoColor=white
+[GO-Url]:https://go.dev/
+[Docker.com]:https://img.shields.io/badge/docker-003f8c?style=for-the-badge&logo=docker&logoColor=white
+[Docker-Url]:https://www.docker.com/
+[Mongodb.com]:https://img.shields.io/badge/mongodb-116149?style=for-the-badge&logo=mongodb&logoColor=white
+[Mongodb-Url]:https://www.mongodb.com/
+[Postgresql.com]:https://img.shields.io/badge/postgresql-32658f?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgresql-Url]:https://www.postgresql.org/
+[Redis.com]:https://img.shields.io/badge/redis-d82c20?style=for-the-badge&logo=redis&logoColor=white
+[Redis-Url]:https://redis.io/
