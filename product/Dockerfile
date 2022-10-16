@@ -1,11 +1,9 @@
 #First Image to compile code to binary code
-FROM golang:1.16.7-alpine AS product-compiler
+FROM golang:alpine AS product-compiler
 RUN adduser -D -g '' client
 WORKDIR /opt/app/
-COPY go.mod go.sum ./
-RUN go mod download && \
-    go mod verify
 COPY . .
+RUN go mod tidy
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -a -installsuffix cgo -o /go/bin/micro-product ./cmd/app
 
 #Second to running binary code from first image
