@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -28,4 +29,17 @@ func (app *application) serverError(w http.ResponseWriter, err error) {
 
 func (app *application) clientError(w http.ResponseWriter, status int) {
 	http.Error(w, http.StatusText(status), status)
+}
+
+func (app *application) responseError(w http.ResponseWriter, msg string) {
+	httpResponse := &models.HttpResponseMessage{
+		Message: "Login Failed",
+	}
+	b, err := json.Marshal(httpResponse)
+	if err != nil {
+		app.serverError(w, err)
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusBadRequest)
+	w.Write(b)
 }

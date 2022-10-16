@@ -20,7 +20,7 @@ func main() {
 	serverPort := flag.Int("serverPort", 4000, "HTTP server network port")
 
 	//Database properties
-	mongoURI := flag.String("mongoURI", "mongodb://localhost:27017", "Database location")
+	mongoURI := flag.String("mongoURI", "mongodb://mongodb_product:27017", "Database location")
 	mongoDatabse := flag.String("mongoDatabse", "product", "Database name")
 	flag.Parse()
 
@@ -28,14 +28,7 @@ func main() {
 	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
 	errLog := log.New(os.Stderr, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 
-	// Create mongo client configuration
 	co := options.Client().ApplyURI(*mongoURI)
-	// if *enableCredentials {
-	// 	co.Auth = &options.Credential{
-	// 		Username: os.Getenv("MONGODB_USERNAME"),
-	// 		Password: os.Getenv("MONGODB_PASSWORD"),
-	// 	}
-	// }
 
 	// Establish database connection
 	client, err := mongo.NewClient(co)
@@ -57,7 +50,6 @@ func main() {
 	}()
 
 	infoLog.Printf("Database connection established")
-
 	// Initialize a new instance of application containing the dependencies.
 	app := &application{
 		infoLog:  infoLog,

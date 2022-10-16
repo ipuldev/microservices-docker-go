@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"log"
 	"net/http"
 
 	"github.com/briankliwon/microservices-product-catalog/product/pkg/models"
@@ -10,7 +9,6 @@ import (
 )
 
 func (app *application) all(w http.ResponseWriter, r *http.Request) {
-	log.Println("jancuk")
 	product, err := app.product.All()
 	if err != nil {
 		app.serverError(w, err)
@@ -38,7 +36,7 @@ func (app *application) insert(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.serverError(w, err)
 	}
-	app.infoLog.Printf("New movie have been created, id=%s", insertResult.InsertedID)
+	app.infoLog.Printf("New product have been created, id=%s", insertResult.InsertedID)
 }
 
 func (app *application) delete(w http.ResponseWriter, r *http.Request) {
@@ -50,7 +48,7 @@ func (app *application) delete(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, err)
 	}
 
-	app.infoLog.Printf("Have been eliminated %d movie(s)", deleteResult.DeletedCount)
+	app.infoLog.Printf("Have been eliminated %d product(s)", deleteResult.DeletedCount)
 }
 
 func (app *application) findByID(w http.ResponseWriter, r *http.Request) {
@@ -71,7 +69,7 @@ func (app *application) findByID(w http.ResponseWriter, r *http.Request) {
 		app.serverError(w, err)
 	}
 
-	app.infoLog.Println("Have been found a movie")
+	app.infoLog.Println("Have been found a product")
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(b)

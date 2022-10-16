@@ -15,7 +15,7 @@ func (app *application) authorize(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	httpResponse := &models.HttpResponse{
+	httpResponse := &models.HttpResponseMessage{
 		Message: "Authentiicated",
 	}
 	b, err := json.Marshal(httpResponse)
@@ -68,17 +68,19 @@ func (app *application) login(w http.ResponseWriter, r *http.Request) {
 	var m models.Auth
 	err := json.NewDecoder(r.Body).Decode(&m)
 	if err != nil {
-		app.serverError(w, err)
+		app.responseError(w, "Login Failed")
+		return
 	}
 	userData, err := app.auth.Select(m)
 	if err != nil {
-		app.serverError(w, err)
+		app.responseError(w, "Login Failed")
+		return
 	}
 	err = bcrypt.CompareHashAndPassword([]byte(userData.Password), []byte(m.Password))
 	if err != nil {
-		app.serverError(w, err)
+		app.responseError(w, "Login Failed")
+		return
 	}
-
 	httpResponse := &models.HttpResponse{
 		Message: "Login success",
 		OauthData: models.Oauth2Key{
@@ -86,7 +88,6 @@ func (app *application) login(w http.ResponseWriter, r *http.Request) {
 			ClientSecret: app.oauth2.ClientSecret,
 		},
 	}
-	app.srv.HandleTokenRequest(w, r)
 	b, err := json.Marshal(httpResponse)
 	if err != nil {
 		app.serverError(w, err)

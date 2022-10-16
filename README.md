@@ -34,19 +34,19 @@ Detail Structure Project :
   * Database:
     * [![Postgresql][Postgresql.com]][Postgresql-url]
   * Routing:
-    * /login
-    * /signup
-    * /authorise
-    * /token
+    * Login
+    * Signup
+    * Authorise
+    * Token
 * Product Service
   * Database:
     * [![Mongodb][Mongodb.com]][Mongodb-url]
   * Routing:
-    * /insert
-    * /detail
-    * /update
-    * /delete
-    * /
+    * Insert
+    * Detail
+    * Update
+    * Delete
+    * List
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,11 +90,12 @@ _Postman [Documentation](https://www.postman.com/belivine/workspace/microservice
 
 - [x] Auth Service
 - [x] Product Service
-- [ ] Environment
-    - [ ] Routing
-    - [ ] Docker
-    - [ ] API Gateway
-
+- [x] Environment
+    - [x] Routing
+    - [x] Docker Compose & Image
+    - [x] API Gateway
+    - [x] Middleware Auth Forward
+- [ ] Unit Testing
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 

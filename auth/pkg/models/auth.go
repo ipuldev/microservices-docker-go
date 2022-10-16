@@ -17,3 +17,7 @@ type Oauth2Key struct {
 	ClientID     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`
 }
+
+type HttpResponseMessage struct {
+	Message string `json:"message"`
+}

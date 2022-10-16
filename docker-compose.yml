@@ -4,9 +4,10 @@ services:
     image: traefik:v2.9
     command:
       #- "--log.level=DEBUG"
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
+      - "--api=true"
+      - "--api.dashboard=true"
+      - "--api.insecure=true" # Don't do that in production
+      - "--providers.docker"
       - "--entrypoints.web.address=:80"
     labels: {}
     volumes:
@@ -24,10 +25,10 @@ services:
   product:
     container_name: product-catalog-product-services
     build: ./product
-    command:
-      - "-mongoURI"
-      - "mongodb://db:27017/"
+    depends_on:
+      - mongodb_product
     labels: 
+      - "traefik.http.routers.product.middlewares=auth"
       - "traefik.http.routers.product.rule=PathPrefix(`/api/product/`)"
       - "traefik.http.services.product.loadbalancer.server.port=4000"
 
@@ -50,12 +51,17 @@ services:
     depends_on:
       - pgsql_auth
     labels: 
+      - "traefik.http.middlewares.auth.forwardauth.address=http://auth:4000/api/auth/authorize"
+      - "traefik.http.middlewares.auth.forwardauth.trustForwardHeader=true"
       - "traefik.http.routers.auth.rule=PathPrefix(`/api/auth/`)"
       - "traefik.http.services.auth.loadbalancer.server.port=4000"
 
   pgsql_auth:
     container_name: product-catalog-auth-pgsql
     image: postgres:alpine
+    volumes:
+      - ./auth/docker/pgsql/data:/var/lib/postgresql/data
+      - ./auth/docker/pgsql/sql/users.sql:/docker-entrypoint-initdb.d/users.sql
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_USER: root
