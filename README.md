@@ -129,7 +129,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Credits
-Originally built by [mmorejon][https://github.com/mmorejon/microservices-docker-go-mongodb]
+Originally built by [mmorejon](https://github.com/mmorejon/microservices-docker-go-mongodb).
 
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/briankliwon/microservices-docker
