@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/briankliwon/microservices-product-catalog/product/pkg/db/mongodb"
+	"github.com/briankliwon/microservices-docker-go/product/pkg/db/mongodb"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

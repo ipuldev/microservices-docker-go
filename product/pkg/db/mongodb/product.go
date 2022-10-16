@@ -4,7 +4,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/briankliwon/microservices-product-catalog/product/pkg/models"
+	"github.com/briankliwon/microservices-docker-go/product/pkg/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"

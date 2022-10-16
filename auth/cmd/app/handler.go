@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/briankliwon/microservices-product-catalog/auth/pkg/models"
+	"github.com/briankliwon/microservices-docker-go/auth/pkg/models"
 	"golang.org/x/crypto/bcrypt"
 )
 

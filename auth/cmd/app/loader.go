@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/briankliwon/microservices-product-catalog/auth/pkg/db/pgsql"
-	"github.com/briankliwon/microservices-product-catalog/auth/pkg/models"
+	"github.com/briankliwon/microservices-docker-go/auth/pkg/db/pgsql"
+	"github.com/briankliwon/microservices-docker-go/auth/pkg/models"
 	"github.com/go-oauth2/oauth2/v4/server"
 )
 

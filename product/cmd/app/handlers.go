@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/briankliwon/microservices-product-catalog/product/pkg/models"
+	"github.com/briankliwon/microservices-docker-go/product/pkg/models"
 	"github.com/gorilla/mux"
 )
 

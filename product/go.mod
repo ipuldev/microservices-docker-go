@@ -1,4 +1,4 @@
-module github.com/briankliwon/microservices-product-catalog/product
+module github.com/briankliwon/microservices-docker-go/product
 
 go 1.19
 

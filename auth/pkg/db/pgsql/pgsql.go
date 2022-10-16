@@ -3,7 +3,7 @@ package pgsql
 import (
 	"context"
 
-	"github.com/briankliwon/microservices-product-catalog/auth/pkg/models"
+	"github.com/briankliwon/microservices-docker-go/auth/pkg/models"
 	"github.com/jackc/pgx/v4/pgxpool"
 )
 

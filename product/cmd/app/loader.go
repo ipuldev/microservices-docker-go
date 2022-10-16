@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/briankliwon/microservices-product-catalog/product/pkg/db/mongodb"
+	"github.com/briankliwon/microservices-docker-go/product/pkg/db/mongodb"
 )
 
 type application struct {

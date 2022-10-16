@@ -1,4 +1,4 @@
-module github.com/briankliwon/microservices-product-catalog/auth
+module github.com/briankliwon/microservices-docker-go/auth
 
 go 1.19
 
