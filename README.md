@@ -19,6 +19,7 @@
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
+    <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
 
@@ -76,6 +77,9 @@ Note make sure your docker version is competible
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+Testing module
+- `cd [module]`
+- `go test ./mocks/... -run -w`
 
 For more information 
 
@@ -95,7 +99,7 @@ _Postman [Documentation](https://www.postman.com/belivine/workspace/microservice
     - [x] Docker Compose & Image
     - [x] API Gateway
     - [x] Middleware Auth Forward
-- [ ] Unit Testing
+- [x] Unit Testing
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -124,7 +128,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- MARKDOWN LINKS & IMAGES -->
+## Credits
+Originally built by [mmorejon][https://github.com/mmorejon/microservices-docker-go-mongodb]
+
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [license-shield]: https://img.shields.io/github/license/briankliwon/microservices-docker
 [license-url]: https://github.com/briankliwon/microservices-docker/blob/master/LICENSE

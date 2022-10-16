@@ -40,7 +40,7 @@ func (db *AuthModel) Insert(auth models.Auth) (*models.Auth, error) {
 
 func (db *AuthModel) Select(auth models.Auth) (*models.Auth, error) {
 	var userData models.Auth
-	err := db.C.QueryRow(context.Background(), "SELECT id::text,username,email,password FROM users WHERE username = $1", auth.Username).Scan(&userData.ID, &userData.Username, &userData.Email, &userData.Password)
+	err := db.C.QueryRow(context.Background(), "SELECT id::text,username,email,password FROM users WHERE username = $1 limit 1", auth.Username).Scan(&userData.ID, &userData.Username, &userData.Email, &userData.Password)
 	if err != nil {
 		return nil, err
 	}

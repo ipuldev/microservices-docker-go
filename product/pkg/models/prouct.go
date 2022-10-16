@@ -15,3 +15,8 @@ type Product struct {
 	Price       int                `bson:"price,omitempty"`
 	CreatedOn   time.Time          `bson:"createdon,omitempty"`
 }
+
+type InsertResponse struct {
+	Message   string `json:"message"`
+	Insert_id string `json:"insert_id"`
+}

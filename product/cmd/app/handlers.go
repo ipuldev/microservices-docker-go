@@ -6,6 +6,7 @@ import (
 
 	"github.com/briankliwon/microservices-docker-go/product/pkg/models"
 	"github.com/gorilla/mux"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 func (app *application) all(w http.ResponseWriter, r *http.Request) {
@@ -36,7 +37,20 @@ func (app *application) insert(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.serverError(w, err)
 	}
+	response := &models.InsertResponse{
+		Message:   "Insert Data success",
+		Insert_id: insertResult.InsertedID.(primitive.ObjectID).Hex(),
+	}
+
+	b, err := json.Marshal(response)
+	if err != nil {
+		app.serverError(w, err)
+	}
 	app.infoLog.Printf("New product have been created, id=%s", insertResult.InsertedID)
+	app.infoLog.Println("Product have been listed")
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(b)
 }
 
 func (app *application) delete(w http.ResponseWriter, r *http.Request) {

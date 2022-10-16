@@ -40,6 +40,12 @@ services:
       #   published: 27017
       #   protocol: tcp
       #   mode: host
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/test --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
     volumes:
       - type: bind
         source: ./database
@@ -49,7 +55,8 @@ services:
     container_name: product-catalog-auth-services
     build: ./auth
     depends_on:
-      - pgsql_auth
+      pgsql_auth:
+        condition: service_healthy
     labels: 
       - "traefik.http.middlewares.auth.forwardauth.address=http://auth:4000/api/auth/authorize"
       - "traefik.http.middlewares.auth.forwardauth.trustForwardHeader=true"
@@ -62,6 +69,11 @@ services:
     volumes:
       - ./auth/docker/pgsql/data:/var/lib/postgresql/data
       - ./auth/docker/pgsql/sql/users.sql:/docker-entrypoint-initdb.d/users.sql
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "${POSTGRES_DB}", "-U", "${POSTGRES_USER}" ]
+      timeout: 45s
+      interval: 10s
+      retries: 2
     environment:
       POSTGRES_PASSWORD: root
       POSTGRES_USER: root
