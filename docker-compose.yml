@@ -35,17 +35,6 @@ services:
   mongodb_product:
     container_name: product-catalog-product-mongodb
     image: mongo:4.2.11
-    # ports:
-      # - target: 27017
-      #   published: 27017
-      #   protocol: tcp
-      #   mode: host
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/test --quiet
-      interval: 10s
-      timeout: 10s
-      retries: 5
-      start_period: 40s
     volumes:
       - type: bind
         source: ./product/docker/mongodb/database
