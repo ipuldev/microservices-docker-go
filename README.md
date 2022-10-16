@@ -36,7 +36,7 @@ Detail Structure Project :
   * Routing:
     * Login
     * Signup
-    * Authorise
+    * Authorize
     * Token
 * Product Service
   * Database:
