@@ -81,6 +81,12 @@ Testing module
 - `cd [module]`
 - `go test ./mocks/... -run -w`
 
+Testing API
+- Request Sign Up / Login API and then you will get client_id and client_secret for generating token
+- Request Token 
+  - Set the token response to all Authorization Bearer Request
+- Finnaly you can access any API 
+
 For more information 
 
 _Postman [Documentation](https://www.postman.com/belivine/workspace/microservices-docker)_
